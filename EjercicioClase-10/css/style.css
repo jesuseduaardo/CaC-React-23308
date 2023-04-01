@@ -1,0 +1,248 @@
+html, body {
+    font-size: 16px;
+    background-color: #141414;
+    color: #9f9f9f;
+    font-family: 'Rubik', sans-serif;
+}
+
+.logo {
+    position: relative;
+    display: block;
+    width: 25em;
+    height: 5em;
+    margin: 2em auto 1em;
+    cursor: pointer;
+    background: url('../img/logo.png') no-repeat center;
+}
+
+.logo::after {
+    display: block;
+    width: 15em;
+    text-align: center;
+    position: absolute;
+    content: 'by a nerd from Codo a Codo';
+    bottom: -15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#pagina {
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+#pagina::before {
+    content: 'Pág ';
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+    background-color: #141414;
+    z-index: 9;
+}
+
+.hide {
+    display: none;
+}
+
+.loading::after {
+    content: 'Cargando...';
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    width: 50vw;
+    height: 50vh;
+    background: url('../img/popcorn-joypixels.gif') no-repeat center;
+    background-size: contain;
+}
+
+.contenedor {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+.movie {
+    position: relative;
+    width: 12.5em;
+    height: 23em;
+    margin: 1.5em;
+    cursor: pointer;
+    overflow: hidden;
+    -webkit-transition: all 0.25s linear;
+    -moz-transition: all 0.25s linear;
+    -ms-transition: all 0.25s linear;
+    -o-transition: all 0.25s linear;
+    transition: all 0.25s linear;
+    -webkit-animation: fade-in 2s cubic-bezier(0.290, 0.575, 0.565, 1.000) both;
+    animation: fade-in 2s cubic-bezier(0.290, 0.575, 0.565, 1.000) both;
+}
+
+.movie .poster {
+    width: 100%;
+}
+
+.movie .title {
+    background-color: black;
+    font-size: 1em;
+    padding: 1em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.movie .overview, .movie .vote-average {
+    /*display: none;*/
+}
+
+.movie .overview {
+    display: none;
+    height: 100%;
+    position: absolute;
+    top: 23em;
+    background: #000000dc;
+    color: #f5f1f1;
+}
+
+.movie .overview p {
+    padding: 1em;
+    text-align: justify;
+    line-height: 1.2em;
+    font-size: 0.8em;
+    text-shadow: 0px 0px 3px #000, 0px 0px 3px #000;
+}
+
+.movie .overview .vote-average {
+    text-align: center;
+    font-size: 0.8em;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    bottom: 1em;
+}
+
+.movie .overview .vote-average::before {
+    content: '★ ';
+    color: yellow;
+    text-shadow: 0px 0px 3px #ffffff, 0px 0px 5px #ffffff;
+    font-size: 2em;
+}
+
+
+.movie:hover {
+    -webkit-transform: scale(1.25);
+    -moz-transform: scale(1.25);
+    -ms-transform: scale(1.25);
+    -o-transform: scale(1.25);
+    transform: scale(1.25);
+    z-index: 9;
+}
+
+.movie:hover .overview {
+    display: inline-block;
+    -webkit-animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.paginacion {
+    z-index: 1;
+}
+
+#btnSiguiente, #btnAnterior {
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    width: 2em;
+    height: 8em;
+    opacity: .5;
+}
+
+#btnSiguiente {
+    background: url('../img/right-arrow.png') no-repeat center;
+    background-size: contain;
+    right: 5%;
+}
+
+#btnSiguiente:hover, #btnAnterior:hover {
+    opacity: 1;
+}
+
+#btnAnterior {
+    background: url('../img/left-arrow.png') no-repeat center;
+    background-size: contain;
+    left: 5%;
+}
+
+
+/*Animaciones*/
+
+/**
+ * ----------------------------------------
+ * animation fade-in
+ * ----------------------------------------
+ */
+@-webkit-keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/**
+ * ----------------------------------------
+ * animation slide-top
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-top {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    100% {
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes slide-top {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    100% {
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "apiUrl":"https://api.themoviedb.org/3/movie/popular",
+    "ak":"569874afe1e8869fd0af419ec3ab6e24d247c32569",
+    "language":"es-MX",
+    "imgRootUrl":"https://image.tmdb.org/t/p/w500/"
+}
